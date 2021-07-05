@@ -27,7 +27,7 @@ function displayBooks() {
   list.id = "list";
   books.forEach((b) => {
     let { title } = b;
-    title = title.replace(/\s/g, "");
+    title = title.replace(/\s/g, "_");
     const liId = `li${title}`;
     const bookCard = `<li id=${liId}>
             <h5>${b.title}</h5>
@@ -76,6 +76,15 @@ function addBook() {
 
 function removebook(data) {
   console.log(data.id)
+  const title=(data.id).replace("_", " ");
+  var temp=[];
+  books.forEach((book) => {
+    if (book.title !== title) {
+      temp.push(book);
+    }
+  });
+  books=temp;
+  console.log(books)
   const idBtn = data.id;
 
   const liId = `li${idBtn}`;
