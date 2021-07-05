@@ -13,14 +13,7 @@ The correct book dissapears from the page.
 Make sure that data is preserved in the browser's memory by using localStorage.*/
 /*   Create a collection that keeps a list of books
     (hint: you can use an array of objects for that).*/
-    var books = JSON.parse(window.localStorage.getItem('books'));
-    if (books === null) {
-      //initial values
-      books= [{ title: "Lorem Ipsun", author: "Testeroo Testyy" },
-         { title: "Second book", author: "Testeroo Testyy" },
-     ];
-     window.localStorage.setItem('books',JSON.stringify(books));
-    }
+    var books=null;
 function displayBooks() {
   const section = document.getElementById("collection");
   const list = document.createElement("ul");
@@ -41,8 +34,12 @@ function displayBooks() {
   section.appendChild(list);
 }
 
-function searchForBook(title){
-  
+function updateLocalStorage(){
+  if(books===null){
+    books=JSON.parse(window.localStorage.getItem('books'));
+  }
+  window.localStorage.setItem('books',JSON.stringify(books));
+  displayBooks();
 }
 
 function addBook() {
@@ -69,8 +66,7 @@ function addBook() {
       }
       return 0;
     });
-    window.localStorage.setItem('books',JSON.stringify(books));
-    displayBooks();
+    updateLocalStorage();
   }
 }
 
@@ -85,12 +81,13 @@ function removebook(data) {
   });
   books=temp;
   console.log(books)
-  const idBtn = data.id;
+  updateLocalStorage();
+  // const idBtn = data.id;
 
-  const liId = `li${idBtn}`;
-  const li = document.getElementById(liId);
-  const ul = document.getElementsByTagName("ul");
-  ul[0].removeChild(li);
+  // const liId = `li${idBtn}`;
+  // const li = document.getElementById(liId);
+  // const ul = document.getElementsByTagName("ul");
+  // ul[0].removeChild(li);
 }
 
 // This first function ensures that the document has being already created
@@ -105,4 +102,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-displayBooks();
+updateLocalStorage();
