@@ -1,19 +1,4 @@
-/**
- *  Create a collection that keeps a list of books (hint: you can use an array of objects for that). - done
-Create a function to add a new book to the collection, with title and author. -done
-Create a function to remove a book from the collection (hint: you can use
-the array filter() method).
-Display all books saved in the collection in the top part of the page.
-Make sure that when a user clicks the "Add" button:
-A new book is added to the collection.
-The new book is displayed in the page.
-Make sure that when a user clicks the "Remove" button:
-The correct book is removed from the collection.
-The correct book dissapears from the page.
-Make sure that data is preserved in the browser's memory by using localStorage.*/
-/*   Create a collection that keeps a list of books
-    (hint: you can use an array of objects for that).*/
-    var books=null;
+var books=null;
 function displayBooks() {
   const section = document.getElementById("collection");
   const list = document.createElement("ul");
@@ -71,7 +56,6 @@ function addBook() {
 }
 
 function removebook(data) {
-  console.log(data.id)
   const title=(data.id).replace("_", " ");
   var temp=[];
   books.forEach((book) => {
@@ -80,14 +64,7 @@ function removebook(data) {
     }
   });
   books=temp;
-  console.log(books)
   updateLocalStorage();
-  // const idBtn = data.id;
-
-  // const liId = `li${idBtn}`;
-  // const li = document.getElementById(liId);
-  // const ul = document.getElementsByTagName("ul");
-  // ul[0].removeChild(li);
 }
 
 // This first function ensures that the document has being already created
