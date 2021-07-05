@@ -28,10 +28,11 @@ function displayBooks() {
   books.forEach((b) => {
     let { title } = b;
     title = title.replace(/\s/g, "");
-    const bookCard = `<li>
+    const liId = `li${title}`;
+    const bookCard = `<li id=${liId}>
             <h5>${b.title}</h5>
             <h6>${b.author}</h6>
-            <button id=${title} class="remove">Remove</button>
+            <button id=${title} onclick="removebook(${title})" class="remove">Remove</button>
           </li>`;
     list.insertAdjacentHTML("beforeend", bookCard);
   });
@@ -43,27 +44,38 @@ function displayBooks() {
 function addBook() {
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
-  const found = books.find((b) => b.title === title);
-  console.log(found);
-  const book = { title, author };
-  books.push(book);
-
-  books.sort((a, b) => {
-    const titleA = a.title.toLowerCase();
-    const titleB = b.title.toLowerCase();
-    if (titleA < titleB) {
-      return -1;
+  let found = null;
+  books.forEach((book) => {
+    if (book.title === title) {
+      found = true;
     }
-    if (titleA > titleB) {
-      return 1;
-    }
-    return 0;
   });
-  displayBooks();
+
+  if (!found) {
+    const book = { title, author };
+    books.push(book);
+    books.sort((bookA, bookB) => {
+      const titleA = bookA.title.toLowerCase();
+      const titleB = bookB.title.toLowerCase();
+      if (titleA < titleB) {
+        return -1;
+      }
+      if (titleA > titleB) {
+        return 1;
+      }
+      return 0;
+    });
+    displayBooks();
+  }
 }
 
-function removeBook(e) {
-  console.log(e);
+function removebook(data) {
+  const idBtn = data.id;
+  const liId = `li${idBtn}`;
+  const li = document.getElementById(liId);
+  const ul = document.getElementsByTagName("ul");
+  ul[0].removeChild(li);
+
   // const index = books.findIndex((b) => b.title === title);
   // if (index !== -1) books.splice(index, 1);
 }
@@ -74,8 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
   btnAdd.addEventListener("click", addBook, false);
   const removeBtn = document.getElementsByClassName("remove-btn");
   if (removeBtn.length !== 0) {
-    removeBtn.forEach((b) => {
-      b.addEventListener("click", removeBook, false);
+    removeBtn.forEach((button) => {
+      button.addEventListener("click", removeBook, false);
     });
   }
 });
