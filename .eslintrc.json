@@ -10,7 +10,7 @@
     "sourceType": "module"
   },
   "extends": ["airbnb-base"],
-  "rules": {
+  "rules": {  
     "no-shadow": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
