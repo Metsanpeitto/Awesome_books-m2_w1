@@ -27,11 +27,11 @@
 
 If you want to visit the deployed app just visit the following link:
 
-- [`https://metsanpeitto.github.io/Portfolio_1/`](https://metsanpeitto.github.io/Portfolio_1/)
+- [`https://metsanpeitto.github.io/Awesome_books-m2_w1/`](https://metsanpeitto.github.io/Awesome_books-m2_w1/)
 
 If you want a copy of this file go to the github repository and download it
 
-- `git clone https://github.com/Metsanpeitto/Portfolio_1`
+- `git clone https://github.com/Metsanpeitto/Awesome_books-m2_w1`
 
 After cloning it you can see the project opening the index.html file with your favorite browser ( Firefox for example )
 
