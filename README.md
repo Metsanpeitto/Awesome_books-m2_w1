@@ -73,6 +73,12 @@ After cloning it you can see the project opening the index.html file with your f
 - LinkedIn: [Abraham Rodriguez](https://www.linkedin.com/in/abraham-rodriguez-3283a319a/)
 - Portfolio: [Waldenberg](https://portfolio.waldenberginc.com)
 
+👤 **Ahmad Zia Yousufi**
+
+- GitHub: [@ahzia](https://github.com/ahzia)
+- Twitter: [@ZiaYousofi](https://twitter.com/ZiaYousofi)
+- LinkedIn: [Ahmad zia Yousufi](https://https://www.linkedin.com/in/ah-ziayosfi)
+
 =======
 
 ## 🤝 Contributing
