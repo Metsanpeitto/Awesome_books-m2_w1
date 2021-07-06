@@ -17,7 +17,7 @@ class BookCollection {
         const bookCard = `<li id=${liId}>
             <h5>${book.title}</h5>
             <h6>${book.author}</h6>
-            <button id=${title} onclick="bookCollection.removebook(${title})" class="remove">Remove</button>
+            <button id=${title} onclick="bookCollection.removeBook(${title})" class="remove">Remove</button>
           </li>`;
         list.insertAdjacentHTML('beforeend', bookCard);
       });
@@ -43,10 +43,10 @@ class BookCollection {
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
     let found = null;
-    if (!this.books) {
-      this.books = [];
-    }
-    if (this.books) {
+    if (title !== '') {
+      if (!this.books) {
+        this.books = [];
+      }
       this.books.forEach((book) => {
         if (book.title === title) {
           found = true;
@@ -71,8 +71,7 @@ class BookCollection {
     }
   }
 
-  /**       Removebook removes the selected book from the collection       */
-  removebook(data) {
+  removeBook(data) {
     const title = data.id.replace(/_/g, ' ');
     const temp = [];
     this.books.forEach((book) => {
@@ -100,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const removeBtn = document.getElementsByClassName('remove-btn');
   if (removeBtn.length !== 0) {
     removeBtn.forEach((button) => {
-      button.addEventListener('click', bookCollection.removebook, false);
+      button.addEventListener('click', bookCollection.removeBook, false);
     });
   }
 });
