@@ -6,15 +6,23 @@ class BookCollection {
   displayBooks() {
     const section = document.getElementById("collection");
     const list = document.createElement("ul");
-    list.id = "list";
     if (this.books) {
-      this.books.forEach((book) => {
+      list.id = "list";
+      this.books.forEach((book, index) => {
+        let oddOrEven = "li-odd";
+        if (index % 2 === 0) {
+          oddOrEven = "li-even";
+        }
         let { title } = book;
         title = title.replace(/\s/g, "_");
         const liId = `li${title}`;
-        const bookCard = `<li id=${liId}>
-            <h5>${book.title}</h5>
+        const bookCard = `<li id=${liId} class=${oddOrEven}>
+           <div class="text">
+            <h6>"${book.title}"</h6>
+            <h6>by</h6>
             <h6>${book.author}</h6>
+           </div>
+          
             <button id=${title} onclick="bookCollection.removebook(${title})" class="remove">Remove</button>
           </li>`;
         list.insertAdjacentHTML("beforeend", bookCard);
@@ -87,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnAdd = document.getElementById("add-btn");
   btnAdd.addEventListener(
     "click",
-    function () {
+    () => {
       bookCollection.addBook();
     },
     false
