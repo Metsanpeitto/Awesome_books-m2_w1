@@ -5,21 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome Books</title>
+    <link href="./css/style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <header>
-      <h1>Awesome books</h1>
+      <h1>All awesome books</h1>
     </header>
 
     <!-- Main section -->
 
     <main>
-      <section id="section" aria-label="section">
-        <div id="collection"></div>
-        <input type="text" name="title" id="title" placeholder="Tile" />
-        <input type="text" name="author" id="author" placeholder="Author" />
-        <button type="submit" id="add-btn">Add</button>
+      <section id="section" class="section" aria-label="section">
+        <div id="collection" class="collection"></div>
+        <div class="line"></div>
+        <form class="adder">
+          <h2>Add a new book</h2>
+          <input
+            class="add-text"
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Tile"
+            required
+          />
+          <input
+            class="add-author"
+            type="text"
+            name="author"
+            id="author"
+            placeholder="Author"
+          />
+          <button class="btn-add" type="submit" id="add-btn">Add</button>
+        </form>
       </section>
     </main>
     <script src="js/class_add_remove.js"></script>

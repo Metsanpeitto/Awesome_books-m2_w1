@@ -6,18 +6,26 @@ class BookCollection {
 
   /**       Display books is used to show the book collection      */
   displayBooks() {
-    const section = document.getElementById('collection');
-    const list = document.createElement('ul');
-    list.id = 'list';
+    const section = document.getElementById("collection");
+    const list = document.createElement("ul");
     if (this.books) {
-      this.books.forEach((book) => {
+      list.id = "list";
+      this.books.forEach((book, index) => {
+        let oddOrEven = "li-odd";
+        if (index % 2 === 0) {
+          oddOrEven = "li-even";
+        }
         let { title } = book;
         title = title.replace(/\s/g, '_');
         const liId = `li${title}`;
-        const bookCard = `<li id=${liId}>
-            <h5>${book.title}</h5>
+        const bookCard = `<li id=${liId} class=${oddOrEven}>
+           <div class="text">
+            <h6>"${book.title}"</h6>
+            <h6>by</h6>
             <h6>${book.author}</h6>
-            <button id=${title} onclick="bookCollection.removeBook(${title})" class="remove">Remove</button>
+           </div>
+          
+            <button id=${title} onclick="bookCollection.removebook(${title})" class="remove">Remove</button>
           </li>`;
         list.insertAdjacentHTML('beforeend', bookCard);
       });
@@ -43,16 +51,16 @@ class BookCollection {
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
     let found = null;
-    if (title !== '') {
-      if (!this.books) {
-        this.books = [];
-      }
+    if (!this.books) {
+      this.books = [];
+    }
+    if (this.books && title!="") {
       this.books.forEach((book) => {
         if (book.title === title) {
           found = true;
         }
       });
-      if (!found) {
+      if (!found && title!="") {
         const book = { title, author };
         this.books.push(book);
         this.books.sort((bookA, bookB) => {

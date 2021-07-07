@@ -1,3 +1,92 @@
 body {
-  width: 100%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: grid;
+  font-family: "Poppins", sans-serif, Verdana;
+}
+
+header {
+  text-align: center;
+}
+
+.collection {
+  margin-top: 10%;
+  display: grid;
+  grid-row-gap: 2%;
+  border: 2px solid #676565;
+  border-radius: 3px;
+}
+
+ul {
+  padding: unset;
+}
+
+li {
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.li-odd {
+  background-color: gray;
+}
+
+.li-even {
+  background-color: white;
+}
+
+.text {
+  display: flex;
+}
+
+h6 {
+  margin-right: 2%;
+}
+
+button {
+  height: 20px;
+  width: 100px;
+  background-color: white;
+  margin-left: auto;
+}
+
+.line {
+  width: 60%;
+  height: 3px;
+  background-color: black;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.adder {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.add-text {
+  margin-bottom: 5%;
+}
+
+.add-author {
+  margin-bottom: 5%;
+}
+
+.btn-add {
+  width: 50px;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    width: 500px;
+  }
 }
