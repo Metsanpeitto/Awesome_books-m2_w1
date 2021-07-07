@@ -50,13 +50,13 @@ class BookCollection {
     if (!this.books) {
       this.books = [];
     }
-    if (this.books) {
+    if (this.books && title!="") {
       this.books.forEach((book) => {
         if (book.title === title) {
           found = true;
         }
       });
-      if (!found) {
+      if (!found && title!="") {
         const book = { title, author };
         this.books.push(book);
         this.books.sort((bookA, bookB) => {
