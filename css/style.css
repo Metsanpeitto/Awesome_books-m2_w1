@@ -54,7 +54,7 @@ nav {
 a {
   color: black;
   text-decoration: unset;
-  font-family: "Roboto";
+  font-family: "Roboto", Verdana, sans-serif;
 }
 
 .divisor {
