@@ -6,14 +6,14 @@ class BookCollection {
 
   /**       Display books is used to show the book collection      */
   displayBooks() {
-    const section = document.getElementById("collection");
-    const list = document.createElement("ul");
+    const section = document.getElementById('collection');
+    const list = document.createElement('ul');
     if (this.books) {
-      list.id = "list";
+      list.id = 'list';
       this.books.forEach((book, index) => {
-        let oddOrEven = "li-odd";
+        let oddOrEven = 'li-odd';
         if (index % 2 === 0) {
-          oddOrEven = "li-even";
+          oddOrEven = 'li-even';
         }
         let { title } = book;
         title = title.replace(/\s/g, '_');
@@ -54,13 +54,13 @@ class BookCollection {
     if (!this.books) {
       this.books = [];
     }
-    if (this.books && title!="") {
+    if (this.books && title !== '') {
       this.books.forEach((book) => {
         if (book.title === title) {
           found = true;
         }
       });
-      if (!found && title!="") {
+      if (!found && title !== '') {
         const book = { title, author };
         this.books.push(book);
         this.books.sort((bookA, bookB) => {
