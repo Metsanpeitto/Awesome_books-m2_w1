@@ -1,6 +1,6 @@
 # Awesome books: refactor to use JavaScript classes
 
-![Alt text](images/awesome_books_basic_ui.png?raw=true 'Optional Title')
+![Alt text](images/screenshot.png?raw=true 'Screenshot')
 ## Learning objectives
 
 - Understand different ways to create objects in JavaScript.
