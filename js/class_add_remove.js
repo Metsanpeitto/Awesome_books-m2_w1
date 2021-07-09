@@ -82,6 +82,11 @@ class BookCollection {
         });
         this.updateLocalStorage(false);
         document.getElementById('addBookStatus').innerHTML = 'Book Added';
+        document.getElementById('title').value = null;
+        document.getElementById('author').value = null;
+        setTimeout(() => {
+          document.getElementById('addBookStatus').innerHTML = '';
+        }, 3000);
       }
     }
   }
