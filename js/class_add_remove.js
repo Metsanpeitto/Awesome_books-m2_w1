@@ -63,6 +63,7 @@ class BookCollection {
       this.books.forEach((book) => {
         if (book.title === title) {
           found = true;
+          document.getElementById('addBookStatus').innerHTML = "Book Already Excist";
         }
       });
       if (!found && title !== '') {
@@ -80,6 +81,7 @@ class BookCollection {
           return 0;
         });
         this.updateLocalStorage(false);
+        document.getElementById('addBookStatus').innerHTML = "Book Added";
       }
     }
   }
