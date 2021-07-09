@@ -63,7 +63,7 @@ class BookCollection {
       this.books.forEach((book) => {
         if (book.title === title) {
           found = true;
-          document.getElementById('addBookStatus').innerHTML = "Book Already Excist";
+          document.getElementById('addBookStatus').innerHTML = 'Book Already Exist';
         }
       });
       if (!found && title !== '') {
@@ -81,7 +81,7 @@ class BookCollection {
           return 0;
         });
         this.updateLocalStorage(false);
-        document.getElementById('addBookStatus').innerHTML = "Book Added";
+        document.getElementById('addBookStatus').innerHTML = 'Book Added';
       }
     }
   }
