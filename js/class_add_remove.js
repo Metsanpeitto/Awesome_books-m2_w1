@@ -81,9 +81,8 @@ class BookCollection {
           return 0;
         });
         this.updateLocalStorage(false);
-        window.location.reload();
-        document.getElementById('title').value = null;
-        document.getElementById('author').value = null;
+        var frm = document.getElementsByName('bookAdderForm')[0];
+        frm.reset();  // Reset all form data
       }
     }
   }
