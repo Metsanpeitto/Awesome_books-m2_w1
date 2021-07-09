@@ -89,6 +89,7 @@ class BookCollection {
         }, 3000);
       }
     }
+    this.displayBooks();
   }
 
   removebook(data) {

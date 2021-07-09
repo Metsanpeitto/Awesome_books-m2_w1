@@ -41,14 +41,13 @@
       </section>
       <section id="add_book" class="section b-tab" aria-label="section">
         <h1 class="title">Add a new book</h1>
-        <form class="adder" onsubmit="return false">
+        <form class="adder" onsubmit="bookCollection.displayBooks()">
           <input
             class="add-text"
             type="text"
             name="title"
             id="title"
             placeholder="Title"
-            required
           />
           <input
             class="add-author"
