@@ -24,7 +24,7 @@ body {
 
 header {
   height: 70px;
-  text-align: center;
+  text-align: end;
 }
 
 nav {
@@ -46,9 +46,10 @@ a.active-tab {
 }
 
 .nav-menu {
+  grid-column-start: 3;
   display: flex;
   font-size: 12px;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 
