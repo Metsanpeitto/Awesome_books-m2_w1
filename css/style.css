@@ -40,7 +40,7 @@ nav {
   align-items: center;
 }
 
-.active {
+a.active-tab{
   color: blue;
 }
 
@@ -144,6 +144,14 @@ button {
 .btn-add {
   width: 50px;
   margin-left: auto;
+}
+
+.b-tab {
+  display: none;
+}
+
+.b-tab.active-tab {
+  display: block;
 }
 
 footer {

@@ -21,11 +21,11 @@
       <nav>
         <h3>Awesome Books</h3>
         <div class="nav-menu">
-          <a class="active" href="./index.html">List</a>
+          <a href="#index" class="active-tab" data-tab="index">List</a>
           <div class="divisor"></div>
-          <a href="./add_book.html">Add new</a>
+          <a href="#add_book" data-tab="add_book">Add new</a>
           <div class="divisor"></div>
-          <a href="./contact.html">Contact</a>
+          <a href="#contact" data-tab="contact">Contact</a>
         </div>
       </nav>
       <div class="date" id="date"></div>
@@ -34,7 +34,7 @@
     <!-- Main section -->
 
     <main>
-      <section id="section" class="section" aria-label="section">
+      <section id="index" class="section b-tab active-tab" aria-label="section">
         <h1 class="title">All awesome books</h1>
         <div id="collection" class="collection"></div>
         <div class="line"></div>
@@ -58,6 +58,38 @@
           <button class="btn-add" type="submit" id="add-btn">Add</button>
         </form>
       </section>
+      <section id="add_book" class="section b-tab" aria-label="section">
+        <h1 class="title">Add a new book</h1>
+        <div class="adder">
+          <h2>Add a new book</h2>
+          <input
+            class="add-text"
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Tile"
+          />
+          <input
+            class="add-author"
+            type="text"
+            name="author"
+            id="author"
+            placeholder="Author"
+          />
+          <button class="btn-add" type="submit" id="add-btn">Add</button>
+        </div>
+      </section>
+      <section id="contact" class="section b-tab" aria-label="section">
+        <h1 class="title">Contact information</h1>
+        <div class="contact-text"></div>
+        <p>Do you have any questions or you just want to say "Hello"?</p>
+        <p>You can reach out to us!</p>
+        <ul class="contact-list">
+          <li>Our e-mail: mail@mail.com</li>
+          <li>Our phone number: 00435866534422</li>
+          <li>Our address Streetname 22, 84503 City, Country</li>
+        </ul>
+      </section>
     </main>
     <footer>
       Copyright 2021 - Waldenberg Incorporated TM - Created by Ahmad Zia Yousufi
@@ -65,5 +97,6 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0/build/global/luxon.min.js"></script>
     <script src="js/class_add_remove.js"></script>
+    <script src="js/tab.js"></script>
   </body>
 </html>
