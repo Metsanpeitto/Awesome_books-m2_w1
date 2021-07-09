@@ -41,7 +41,7 @@
       </section>
       <section id="add_book" class="section b-tab" aria-label="section">
         <h1 class="title">Add a new book</h1>
-        <form onsubmit="window.bookCollection.updateLocalStorage" class="adder">
+        <form action="/" onSubmit="window.location.reload()" class="adder">
           <input
             class="add-text"
             type="text"
@@ -56,7 +56,7 @@
             id="author"
             placeholder="Author"
           />
-          <button class="btn-add" type="submit" id="add-btn">Add</button>
+          <button type="submit" class="btn-add" id="add-btn">Add</button>
           <p id="addBookStatus"></p>
         </form>
       </section>
