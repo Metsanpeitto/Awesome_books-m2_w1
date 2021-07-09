@@ -16,7 +16,9 @@ class BookCollection {
           oddOrEven = 'li-even';
         }
         let { title } = book;
+        title = title.replace(/\W/g, '');
         title = title.replace(/\s/g, '_');
+
         const liId = `li${title}`;
         const bookCard = `<li id=${liId} class=${oddOrEven}>
            <div class="text">
@@ -80,10 +82,17 @@ class BookCollection {
   }
 
   removebook(data) {
-    const title = data.id.replace(/_/g, ' ');
+    let id;
+    if (!data.id) {
+      id = data;
+    } else {
+      id = data.id;
+    }
+    id = id.toString();
+    const title = id.replace(/_/g, ' ');
     const temp = [];
     this.books.forEach((book) => {
-      if (book.title !== title) {
+      if (book.title !== title && !book.title.includes(title)) {
         temp.push(book);
       }
     });
