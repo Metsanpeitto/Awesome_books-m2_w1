@@ -81,15 +81,11 @@ class BookCollection {
           return 0;
         });
         this.updateLocalStorage(false);
-        document.getElementById('addBookStatus').innerHTML = 'Book Added';
+        window.location.reload();
         document.getElementById('title').value = null;
         document.getElementById('author').value = null;
-        setTimeout(() => {
-          document.getElementById('addBookStatus').innerHTML = '';
-        }, 3000);
       }
     }
-    //    this.displayBooks();
   }
 
   removebook(data) {
