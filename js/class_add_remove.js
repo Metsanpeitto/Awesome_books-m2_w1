@@ -91,8 +91,6 @@ class BookCollection {
     } else {
       id = data.id;
     }
-    // id = id.toString();
-    // const title = id.replace(/_/g, " ");
     const temp = [];
     this.books.forEach((book) => {
       if (book.id !== id) {
