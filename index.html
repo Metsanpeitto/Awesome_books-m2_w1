@@ -21,27 +21,26 @@
       <nav>
         <h3>Awesome Books</h3>
         <div class="nav-menu">
-          <button class="nav-btn" id="listBtn">List</button>
+          <a href="#index" class="active-tab" data-tab="index">List</a>
           <div class="divisor"></div>
-          <button class="nav-btn" id="addBtn">Add new</button>
+          <a href="#add_book" data-tab="add_book">Add new</a>
           <div class="divisor"></div>
-          <button class="nav-btn" id="contactBtn">Contact</button>
+          <a href="#contact" data-tab="contact">Contact</a>
         </div>
       </nav>
-      <div class="date">March 19th 2021, 9:25:32 am</div>
+      <div class="date" id="date"></div>
     </header>
 
     <!-- Main section -->
 
     <main>
-      <section id="section" class="section" aria-label="section">
+      <section id="index" class="section b-tab active-tab" aria-label="section">
         <h1 class="title">All awesome books</h1>
         <div id="collection" class="collection"></div>
         <div class="line"></div>
       </section>
-      <section id="section" class="section" aria-label="section">
+      <section id="add_book" class="section b-tab" aria-label="section">
         <h1 class="title">Add a new book</h1>
-
         <form class="adder">
           <h2>Add a new book</h2>
           <input
@@ -62,8 +61,7 @@
           <button class="btn-add" type="submit" id="add-btn">Add</button>
         </form>
       </section>
-
-      <section id="section" class="section" aria-label="section">
+      <section id="contact" class="section b-tab" aria-label="section">
         <h1 class="title">Contact information</h1>
         <div class="contact-text"></div>
         <p>Do you have any questions or you just want to say "Hello"?</p>
@@ -80,5 +78,10 @@
       & Abraham Rodriguez
     </footer>
     <script src="js/class_add_remove.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/luxon@1.27.0/build/global/luxon.min.js"
+      onload="assignDate()"
+    ></script>
+    <script src="js/tab.js"></script>
   </body>
 </html>

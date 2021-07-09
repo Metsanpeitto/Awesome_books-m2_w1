@@ -141,3 +141,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 /**       This method is called when the application runs for first time       */
 bookCollection.updateLocalStorage(false);
+/**       Asigning Date       */
+function assignDate() {
+  const DateTime = luxon.DateTime.now();
+  const Date = `${DateTime.year}-${DateTime.month}-${DateTime.day}`;
+  document.getElementById("date").innerHTML = Date;
+  console.log(Date);
+}
