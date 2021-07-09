@@ -81,8 +81,8 @@ class BookCollection {
           return 0;
         });
         this.updateLocalStorage(false);
-        var frm = document.getElementsByName('bookAdderForm')[0];
-        frm.reset();  // Reset all form data
+        const frm = document.getElementsByName('bookAdderForm')[0];
+        frm.reset(); // Reset all form data
       }
     }
   }
