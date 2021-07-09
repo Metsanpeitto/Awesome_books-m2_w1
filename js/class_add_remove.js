@@ -15,9 +15,8 @@ class BookCollection {
         if (index % 2 === 0) {
           oddOrEven = 'li-even';
         }
-        let { title } = book;
-        title = title.replace(/\W/g, '');
-        title = title.replace(/\s/g, '_');
+        const { title } = book;
+        const { id } = book;
 
         const liId = `li${title}`;
         const bookCard = `<li id=${liId} class=${oddOrEven}>
@@ -27,7 +26,7 @@ class BookCollection {
             <h6>${book.author}</h6>
            </div>
           
-            <button id=${title} onclick="bookCollection.removebook(${title})" class="remove">Remove</button>
+            <button id=${id} onclick="bookCollection.removebook(${id})" class="remove">Remove</button>
           </li>`;
         list.insertAdjacentHTML('beforeend', bookCard);
       });
@@ -45,6 +44,7 @@ class BookCollection {
     }
 
     window.localStorage.setItem('books', JSON.stringify(this.books));
+
     this.displayBooks();
   }
 
@@ -52,6 +52,9 @@ class BookCollection {
   addBook() {
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
+    const date = new Date();
+    const id = date.getMilliseconds();
+
     let found = null;
     if (!this.books) {
       this.books = [];
@@ -63,7 +66,7 @@ class BookCollection {
         }
       });
       if (!found && title !== '') {
-        const book = { title, author };
+        const book = { title, author, id };
         this.books.push(book);
         this.books.sort((bookA, bookB) => {
           const titleA = bookA.title.toLowerCase();
@@ -88,11 +91,11 @@ class BookCollection {
     } else {
       id = data.id;
     }
-    id = id.toString();
-    const title = id.replace(/_/g, ' ');
+    // id = id.toString();
+    // const title = id.replace(/_/g, " ");
     const temp = [];
     this.books.forEach((book) => {
-      if (book.title !== title && !book.title.includes(title)) {
+      if (book.id !== id) {
         temp.push(book);
       }
     });
