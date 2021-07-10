@@ -1,10 +1,12 @@
-# Awesome books: refactor to use JavaScript classes
+# Awesome books: a complete website with navigation
 
-![Alt text](images/awesome_books_basic_ui.png?raw=true 'Optional Title')
+![Alt text](images/screenshot.png?raw=true 'Screenshot')
 ## Learning objectives
 
-- Understand different ways to create objects in JavaScript.
-- Create and access properties and methods of JavaScript objects.
+- Use a new tool effectively with little externally curated support.
+- Understand the concept of single page application.
+- Use JavaScript to manipulate DOM elements.
+- Use JavaScript events.
 
 ### Instructions
 
@@ -35,23 +37,13 @@ After cloning it you can see the project opening the index.html file with your f
 
 ### Project requirements
 
-- Implement only a basic UI with plain HTML:
+- Modify the Awesome books application to have:
+  - A Navigation bar.
+  - Three content sections:
+    1. Books list.
+    2. Add book form.
+    3. Contact info.
 
-- Create a collection that keeps a list of books (hint: you can use an array of objects for that).
-- Create a function to add a new book to the collection, with title and author.
-- Create a function to remove a book from the collection (hint: you can use the [array filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) method).
-- Display all books saved in the collection in the top part of the page.
-- Make sure that when a user clicks the "Add" button:
-  - A new book is added to the collection.
-  - The new book is displayed in the page.
-- Make sure that when a user clicks the "Remove" button:
-  - The correct book is removed from the collection.
-  - The correct book dissapears from the page.
-- Make sure that data is preserved in the browser's memory by using [localStorage](https://github.com/microverseinc/curriculum-html-css/blob/main/local_storage.md).
-- To debug your application, you can use [console.log()](https://developer.mozilla.org/en-US/docs/Web/API/Console/log). **Remember to remove debugging code before pushing your code to the remote repository.**
-
-- Don't use any library or framework, use only plain JavaScript.
--  **You need to use pair-programming for this project. We will check to see if both partners submitted code by looking at the commit history for each project. Therefore you need to use only one repository for your pair-programming group.**
 
 ### Prerequisites
 

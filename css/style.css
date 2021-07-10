@@ -1,13 +1,73 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: unset;
+  padding: unset;
+}
+
 body {
-  width: 90%;
+  width: 95%;
+  min-height: 90vh;
+  margin: 2%;
   margin-left: auto;
   margin-right: auto;
   position: relative;
   display: grid;
+  grid-template-rows: 10% auto 10%;
+  grid-row-gap: 30px;
   font-family: "Poppins", sans-serif, Verdana;
 }
 
 header {
+  height: 70px;
+  text-align: end;
+}
+
+nav {
+  font-size: 14px;
+  position: relative;
+  top: 0%;
+  width: 98%;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  border: 3px solid black;
+  align-items: center;
+}
+
+a.active-tab {
+  color: blue;
+}
+
+.nav-menu {
+  grid-column-start: 3;
+  display: flex;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: black;
+  text-decoration: unset;
+  font-family: "Roboto", Verdana, sans-serif;
+}
+
+.divisor {
+  border-left: 3px solid black;
+  width: 2px;
+  height: 20px;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.title {
   text-align: center;
 }
 
@@ -21,14 +81,17 @@ header {
 
 ul {
   padding: unset;
+  margin: unset;
+  padding-bottom: 5%;
 }
 
 li {
   align-items: center;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 80px;
   padding-left: 2%;
   padding-right: 2%;
+  margin-top: 5%;
 }
 
 .li-odd {
@@ -49,7 +112,7 @@ h6 {
 
 button {
   height: 20px;
-  width: 100px;
+  width: 70px;
   background-color: white;
   margin-left: auto;
 }
@@ -59,6 +122,7 @@ button {
   height: 3px;
   background-color: black;
   margin-top: 10%;
+  margin-bottom: 10%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -83,6 +147,29 @@ button {
 .btn-add {
   width: 50px;
   margin-left: auto;
+}
+
+.b-tab {
+  display: none;
+}
+
+.b-tab.active-tab {
+  display: block;
+}
+
+footer {
+  font-size: 10px;
+  position: relative;
+  padding: 2%;
+  bottom: 0%;
+  max-width: 98%;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  border: 3px solid black;
+  align-items: center;
 }
 
 @media screen and (min-width: 768px) {
